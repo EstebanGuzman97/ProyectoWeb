@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Italianno&display=swap');
+
+@media only screen and (max-width: 640px){
+    #logo{
+        width: 60px;
+    }
+    .text_foto{
+        font-size: 35px;
+    }
+    .foto_producto{
+        width: 45%;
+    }
+    footer h1{
+        margin: 25px;
+        padding: 18px;
+    }
+    footer p{
+        font-size: 17px;
+        font-weight: 600;
+        margin: 22px;
+        padding: 12px;
+        letter-spacing: 2px;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 640px){
+    #logo{
+        width: 80px;
+    }
+    .text_foto{
+        font-size: 50px;
+    }
+    .foto_producto{
+        width: 25%;
+    }
+    footer h1{
+        margin: 36px;
+        padding: 24px;
+    }
+    footer p{
+        font-size: 17px;
+        font-weight: 600;
+        margin: 22px;
+        padding: 16px;
+        letter-spacing: 2px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    #logo{
+        width: 100px;
+    }
+    .text_foto{
+        font-size: 70px;
+    }
+    .foto_producto{
+        width: 20%;
+    }    
+    footer h1{
+        margin: 36px;
+        padding: 24px;
+    }
+    footer p{
+        font-size: 20px;
+        font-weight: 600;
+        margin: 24px;
+        padding: 18px;
+        letter-spacing: 2px;
+    }
+}
+html{
+    background: linear-gradient(#4d4a30b6, #343F40) fixed;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Slabo 27px', serif;
+    color: whitesmoke;
+    text-align: center;
+    min-width: 80%;
+    max-width: 100%;
+    margin: 0;
+}
+:root{
+    animation-duration: 1.5s;
+}
+body{
+    margin: 0;
+}
+#logo{
+    padding: 2px;
+}
+nav{
+    display: flex;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    align-items: center;    
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    flex-wrap: wrap;
+}
+nav p a:hover{
+    color: whitesmoke;
+    background-color: #8C0303;
+    border-radius: 12px;
+}
+i{
+    vertical-align: bottom;
+}
+.nave{
+    text-decoration: none;    
+    color: #1b2122;    
+    padding: 12px;
+    margin: 8px 5px;
+    font-size: 15px;
+    max-width: 100%;
+}
+
+.logo_redes{
+    max-width: 2em;
+    margin: 0.3em;
+}
+
+.foto_producto{
+    margin: 0.5%;
+    border-radius: 13px;
+}
+#warning{
+    text-align: center;
+    padding-top: 20px;
+}
+.text_foto{
+   font-family: 'Italiana', serif;
+   display: inline-block;
+   width: 100%;
+   background-color: #D96704;
+   color: white;
+   padding: 8px;
+   margin: 00.5% auto;
+}
+#logo_pizza{
+    font-size: 50px;
+    vertical-align: top;
+}
+#articulo_sucursal{
+    justify-content: center;
+}
+.suc{
+    background-color:#d96704;
+    padding: 0.5% 1%;
+    margin: 1%;
+    border-radius: 13px;
+    display: inline-block;
+}
+iframe{
+    max-width: 100%;
+    min-width: 50%;
+}
+.titulo_suc{
+    font-size: 20px;
+}
+footer{
+    background: rgba(0, 0, 0, 0.836);
+    min-width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align: left;
+}
+footer p a{
+    text-decoration: none;
+    color: #d96704;
+}
+.art_form{
+    margin: auto;
+    text-align: center;
+    max-width: 500px;
+    padding: 1.5%;
+}
+form{
+    background-color: #D96704;
+    padding: 0.5% 1%;    
+    text-align: left;
+    margin: 2% 3%;
+    border-radius: 13px;
+    
+}
+form label{ 
+    font-size: 18px;
+    font-family: 'Slabo 27px', serif;
+    padding: 1%;
+}
+form input, form select{
+    padding: 0.5%;
+}
+.bottom{
+    padding: 1%;
+    border-radius: 12px;
+    font-family: 'Slabo 27px', serif;
+    background: linear-gradient(#4d4a30b6, #343F40) fixed;
+    color: aliceblue;
+    margin: 1%;
+    font-size: 17px;
+}
+.sec_menu{
+    display: inline-block;
+}
+.art_menu{
+    background-color: #d66603d8;
+    padding: 1.5% 2%;    
+    text-align: left;
+    margin: 2% 3%;
+    border-radius: 13px;
+    max-width: 500px;
+    min-width: 50%;
+    display: inline-block
+}
+.img_menu{
+    width: 40%;
+    max-width: 18em;
+    border-radius: 12px;
+}

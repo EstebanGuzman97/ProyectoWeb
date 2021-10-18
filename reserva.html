@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="shortcut icon" href="img/pizza_icon.ico">
+    <title>Reserva - Pizzeria</title>
+</head>
+<body>
+    <header>
+        <nav>
+        <a href="index.html"><img id= "logo" src="img/logo.png" alt="logo"></a>      
+            <p><a href="index.html" class="nave"><i class="material-icons">home</i>Inicio</a></p>
+            <p><a href="menu.html" class="nave"><i class="material-icons">restaurant_menu</i>Menu</a></p>
+            <p><a href= index.html#parrafo_suc class="nave"><i class="material-icons">room</i>Sucursales</a></p>
+            <p><a href="reserva.html" class="nave"><i class="material-icons">menu_book</i> Reserva</a></p>
+            <p><a href="#contacto" class="nave"><i class="material-icons">contact_support</i>Contacto</a></p>
+            
+            <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.png" class="logo_redes" alt="facebook"></a>
+            <a href="https://www.twitter.com/" target="_blank"><img src="img/twitter.png" class="logo_redes" alt="twitter"></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><img src="img/whatsapp.png" class="logo_redes" alt="whatsapp"></a>
+        </nav>
+    </header>
+    <main>
+        <article class="art_form">
+        <form id="forma">
+            <label for="nombre">Nombre:</label> <br>
+            <input type="text" id="nombre" name="nombre" placeholder="Coloque su nombre aqui.."> <br>
+            <label for="apellido">Apellido:</label> <br>
+            <input type="text" id="apellido" name="apellido" placeholder="Coloque su apellido aqui.."> <br>
+            <label for="email">Email:</label> <br>
+            <input type="text" name="email" id="email"> <br>
+            <label for="edad">Edad:</label> <br>
+            <input type="number" name="edad" id="edad"> <br>
+            <label for="fecha">Fecha de reserva:</label> <br>
+            <input type="date" name="fecha" id="fecha"> <br>
+            <label for="sucursal">Eliga una sucursar:</label> <br>
+            <select name="sucursal" id="sucursal">
+                <option value="suc_obelisco">Sucursal Obelisco</option>
+                <option value="suc_santelmo">Sucursal San Telmo</option>
+            </select> <br>
+            <label for="cantidad_lugares">Cantidad de lugares (maximo 10 personas):</label> <br>
+            <select name="cantidad_lugares" id="cantidad_lugares">
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+                <option value="4">4 personas</option>
+                <option value="5">5 personas</option>
+                <option value="6">6 personas</option>
+                <option value="7">7 personas</option>
+                <option value="8">8 personas</option>
+                <option value="9">9 personas</option>
+                <option value="10">10 personas</option>
+            </select> <br>
+            <label for="comentario">Deje un comentario:</label> <br>
+            <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Coloque aqui su comentario..."></textarea> <br>
+            <input type="submit" name="enviar" id="enviar" value="Enviar" class="bottom">
+            <input type="reset" name="reset" id="reset" value="Reestablecer" class="bottom">
+            <div id="warning"></div>
+        </form>       
+        
+        </article>
+    </main>
+    <footer>
+        <div id="contacto">
+            <h1>¡Hace tu pedido Online!</h1>
+            <p>Sucursal Obelisco: <a href="https://www.google.com/maps?ll=-34.605399,-58.380481&z=17&t=m&hl=es-419&gl=AR&mapclient=embed&q=Carlos+Pellegrini+271+C1009+ABE+Buenos+Aires" target="_blank">Carlos Pelegrini 271</a>  Telefono: <a href="tel:4227-5289">4227-5289</a> / <a href="tel:1558443200">1558443200</a></p>
+            <p>Sucursal San Telmo: <a href="https://www.google.com/maps?ll=-34.619989,-58.371533&z=17&t=m&hl=es-419&gl=AR&mapclient=embed&q=Defensa+1039+C1065+AAS+Buenos+Aires" target="_blank">Defensa 1039</a>  Telefono: <a href="tel:4521-8864">4521-8864</a> / <a href="tel:1511884522">1511884522</a></p>
+            <p>Email: <a href="mailto:pizza.obelisco@gmail.com">pizza.obelisco@gmail.com</a> / <a href="mailto:pizza.santelmo@gmail.com">pizza.santelmo@gmail.com</a></p>
+        </div>
+    </footer>
+    <script>
+        const nombre = document.getElementById("nombre");
+        const apellido = document.getElementById("apellido");
+        const forma = document.getElementById("forma");
+        const email = document.getElementById("email");
+        const fecha = document.getElementById("fecha");
+        const edad = document.getElementById("edad");               
+        const parrafo = document.getElementById("warning");
+
+        forma.addEventListener("submit", e=> {
+            e.preventDefault();
+            let warning = "";
+            let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            let entrar = false;
+            parrafo.innerHTML = "";
+            if(nombre.value.length === 0){
+                warning += "El nombre no puede ser nulo <br>";
+                entrar = true;
+            }
+            if(apellido.value.length === 0){
+                warning += "El apellido no puede ser nulo <br>";
+                entrar = true;
+            }
+            if(edad.value < 18){
+                warning += "Debes tener al menos 18 años para hacer una reserva <br>";
+                entrar = true;
+            }
+            if(!emailRegex.test(email.value)){
+                warning += "El email no es valido <br>"; 
+                entrar = true;
+            }
+            if(entrar){
+                parrafo.innerHTML = warning;
+            }
+        });
+    </script>    
+</body>
+</html>
